@@ -1,0 +1,3 @@
+[submodule "current-projects/HPyX"]
+	path = current-projects/HPyX
+	url = https://github.com/lsetiawan/HPyX.git
