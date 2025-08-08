@@ -1,12 +1,21 @@
+#                             VVVVVV  minimum `pixi` version
+"$schema" = "https://pixi.sh/v0.49.0/schema/manifest/schema.json"
+
 [workspace]
 authors = ["Don Setiawan <landungs@uw.edu>"]
 channels = ["conda-forge"]
 name = "workspace"
 platforms = ["linux-64"]
-version = "0.1.0"
+version = "2025.8.8"
 
-[tasks]
-get-hpyx = { cmd = "git submodule update --init -- current-projects/HPyX" }
-remove-hpyx = { cmd = "git submodule deinit -- current-projects/HPyX" }
+[environments]
+hpyx = { features = ["hpyx"], solve-group= "default"}
 
 [dependencies]
+
+[tasks]
+
+[feature.hpyx.tasks]
+get-hpyx = { cmd = "git fetch --all", depends-on = ["init-hpyx"], cwd = "current-projects/HPyX" }
+remove-hpyx = { cmd = "git submodule deinit -- current-projects/HPyX" }
+init-hpyx = { cmd = "git submodule update --init -- current-projects/HPyX" }

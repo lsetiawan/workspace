@@ -4,4 +4,8 @@ environments:
     channels:
     - url: https://conda.anaconda.org/conda-forge/
     packages: {}
+  hpyx:
+    channels:
+    - url: https://conda.anaconda.org/conda-forge/
+    packages: {}
 packages: []
